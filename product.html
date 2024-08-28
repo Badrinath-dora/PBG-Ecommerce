@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>PBG Jewellery</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      <link rel="icon" href="images/fevicon.png" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- site css -->
+      <link rel="stylesheet" href="style.css" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="css/responsive.css" />
+      <!-- color css -->
+      <link rel="stylesheet" href="css/colors.css" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="css/bootstrap-select.css" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="css/custom.css" />
+      <!-- calendar file css -->
+      <link rel="stylesheet" href="js/semantic.min.css" />
+      <!-- fancy box js -->
+      <link rel="stylesheet" href="css/jquery.fancybox.css" />
+    
+      <link rel="stylesheet" href="css/admin.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body class="inner_page tables_page">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section" style="background-color:aliceblue; height:83px;width:80px">
+                        <center>
+                        <a href="index.html"><img class="logo_icon img-responsive" style="height:80px;width:80px" src="images/logo.png" alt="#" /></a>
+                     </center>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_info">
+                           <h6>PBG Jewellery</h6>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="index.html" ><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+            
+                     </li>
+                    
+                     <li><a href="product.html"><i class="fa fa-table purple_color2"></i> <span>Product Management</span></a></li>
+                     <li><a href="category.html"><i class="fa fa-bar-chart-o green_color"></i> <span>Category Management</span></a></li>
+                     <li><a href="pincode.html"><i class="fa fa-map orange_color2"></i> <span>PinCode Management</span></a></li>
+                     <li><a href="images.html"><i class="fa fa-image orange_color2"></i> <span>Image Management</span></a></li>
+                   
+                     
+                   
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+                   <!-- topbar -->
+                   <div class="topbar">
+                     <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="full">
+                           <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                          
+                           <div class="right_topbar">
+                              <div class="icon_info">
+                                 <button id="logoutBtn" class="btn btn-success" style="margin: 10px;" >
+                                    <i class="material-icons">exit_to_app</i> Logout
+                                  </button>
+            
+                              </div>
+                           </div>
+                        </div>
+                     </nav>
+                  </div>
+
+               <br>
+
+                  <br>
+             
+               <!-- end topbar -->
+               <div class="table-responsive">
+                  <div class="table-wrapper">
+                    <div class="table-title">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <h2 style="color: white;">PBG <b>Product Management</b></h2>
+                        </div>
+                        <div class="col-xs-6">
+                           
+                          <a href="#productFormModal" class="btn btn-success" data-toggle="modal" onclick="resetModalForm()"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <table id="datatable" class="table table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th>Product Code</th>
+                          <th>Category</th>
+                          <th>Sub Cate</th>
+                          <th>Name</th>
+                          <th>Quantity</th>
+                          <th>Weight</th>
+                          <th>Metal</th>
+                          <th>Purity</th>
+                          <th>Gold</th>
+                          <th>Making Charge</th>
+                          <th>Discount</th>
+                          <th>Total</th>
+                          <th>GST</th>
+                          <th>Grand Total</th>
+                          <th>Actions</th>
+                          <th>View</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+           
+          
+              <div id="productFormModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <form id="add-product-form">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Add New Product</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="form-group">
+                          <label for="product-code">Product Code:</label>
+                          <input type="text" id="product-code" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="Category">Category:</label>
+                          <select id="category" class="form-select" required>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                        </div>
+          
+                        <div class="form-group">
+                          <label for="Sub-Cate">Sub Cate:</label>
+                          <select id="items" name="items" class="form-select" required>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                        </div>
+          
+                        <div class="form-group">
+                          <label for="product-name">Product Name:</label>
+                          <input type="text" id="product-name" class="form-control" required />
+                        </div>
+                        <!-- <div class="form-group">
+                          <label for="stock">Stock:</label>
+                          <select id="stock" class="form-select" required>
+                              <option value="IN STOCK">IN STOCK</option>
+                              <option value="OUT OF STOCK">OUT OF STOCK</option>
+                          </select>
+                        </div> -->
+                      
+                        <div class="form-group">
+                          <label for="quantity">Quantity:</label>
+                          <input type="number" id="quantity" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="weight">Weight:</label>
+                          <input type="text" id="weight" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="metal">Metal:</label>
+                          <input type="text" id="metal" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="purity">Purity:</label>
+                          <input type="text" id="purity" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="gold">Gold:</label>
+                          <input type="number" id="gold" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="making-charge">Making Charge:</label>
+                          <input type="number" id="making-charge" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="discount">Discount:</label>
+                          <input type="number" id="discount" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="total">Total:</label>
+                          <input type="number" id="total" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="gst">GST :</label>
+                          <input type="number" id="gst" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="grand-total">Grand Total:</label>
+                          <input type="number" id="grand-total" class="form-control" required />
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
+                        <input type="submit" class="btn btn-success" value="Add" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+          
+              <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+              
+          
+              <script src="config.js"></script>
+          
+              <script>
+               
+          
+                let table = new DataTable("#datatable");
+                let products = [];
+              
+                const productsRef = db.collection("Products");
+              
+                productsRef.onSnapshot((snapshot) => {
+                  table.clear().draw();
+              
+                  snapshot.forEach((doc) => {
+                    var id = doc.id;
+                    console.log(id);
+                    var product = doc.data();
+              
+                    products.push({ id: id, ...product });
+                    const viewButton = '<button class="btn btn-primary view-button" data-id="' + id  + '">View</button>';
+                    
+                    var dataSet = [
+                      product['product_code'],
+                      product['category'],
+                      product['sub_cate'],
+                      product['name'],
+                     // product['stock'],
+                      product['quantity'],
+                      product['weight'],
+                      product['metal'],
+                      product['purity'],
+                      product['gold'],
+                      product['making_charge'],
+                      product['discount'],
+                      product['total'],
+                      product['gst'],
+                      product['grand_total'],
+                      `<a href="#productFormModal" class="edit" data-id="${id}" data-toggle="modal" onclick="populateEditForm('${id}')">
+                          <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                      </a>
+                      <a href="#" class="delete" data-id="${id}" data-toggle="modal" onclick="deleteProduct('${id}')">
+                          <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                      </a>`,
+                      viewButton,
+                    ];
+              
+                    table.rows.add([dataSet]).draw();
+                  });
+                });
+          
+              
+                function resetModalForm() {
+                  const form = document.getElementById("add-product-form");
+                  form.reset();
+                  const submitButton = form.querySelector(".btn-success");
+                  submitButton.removeAttribute("data-id");
+                  
+                  // Close the modal
+                  $("#productFormModal").modal("hide");
+                }
+                
+                const addProductForm = document.getElementById("add-product-form");
+          addProductForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
+            const submitButton = event.target.querySelector(".btn-success");
+            const productCode = document.getElementById("product-code").value;
+            const category = document.getElementById("category").value;
+            const subCategory = document.getElementById("items").value;
+            const productName = document.getElementById("product-name").value;
+           // const stock = document.getElementById("stock").value;
+            const quantity = document.getElementById("quantity").value;
+            const weight = document.getElementById("weight").value;
+            const metal = document.getElementById("metal").value;
+            const purity = document.getElementById("purity").value;
+            const gold = document.getElementById("gold").value;
+            const makingCharge = document.getElementById("making-charge").value;
+            const discount = document.getElementById("discount").value;
+            const total = document.getElementById("total").value;
+            const gst = document.getElementById("gst").value;
+            const grandTotal = document.getElementById("grand-total").value;
+          
+            let data = {
+              'product_code': productCode,
+              'category': category,
+              'sub_cate': subCategory,
+              'name': productName,
+             // 'stock': stock,
+              'quantity': Number(quantity),
+              'weight': parseFloat(weight), // Parse weight as a decimal
+              'metal': metal,
+              'purity': parseFloat(purity), // Parse purity as a decimal
+              'gold': Number(gold),
+              'making_charge': Number(makingCharge),
+              'discount': Number(discount),
+              'total': Number(total),
+              'gst': Number(gst),
+              'grand_total': Number(grandTotal),
+          };
+          
+            if (submitButton.hasAttribute("data-id")) {
+              const productKey = submitButton.getAttribute("data-id");
+              await productsRef.doc(productKey).update(data);
+            } else {
+              await productsRef.add(data);
+            }
+          
+            // Close the modal after adding/editing a product
+            $("#productFormModal").modal("hide");
+            resetModalForm();
+          });
+          
+          function populateEditForm(key) {
+            console.log("Edit button clicked");
+          
+            let index = products.findIndex((e) => e.id == key);
+            if (index != -1) {
+              let product = products[index];
+              console.log(product);
+          
+              document.getElementById("product-code").value = product['product_code'];
+              document.getElementById("category").value = product['category'];
+              document.getElementById("items").value = product['sub_cate'];
+              document.getElementById("product-name").value = product['name'];
+             // document.getElementById("stock").value = product['stock'];
+              document.getElementById("quantity").value = product['quantity'];
+              document.getElementById("weight").value = product['weight'];
+              document.getElementById("metal").value = product['metal'];
+              document.getElementById("purity").value = product['purity'];
+              document.getElementById("gold").value = product['gold'];
+              document.getElementById("making-charge").value = product['making_charge'];
+              document.getElementById("discount").value = product['discount'];
+              document.getElementById("total").value = product['total'];
+              document.getElementById("gst").value = product['gst'];
+              document.getElementById("grand-total").value = product['grand_total'];
+            }
+          
+            const editSubmitButton = document.querySelector("#productFormModal .btn-success");
+            editSubmitButton.setAttribute("data-id", key);
+          
+            // Close the modal after populating data for editing
+            $("#productFormModal").modal("hide");
+          }
+          
+          
+                async function deleteProduct(key) {
+                  await productsRef.doc(key).delete();
+                }
+              </script>
+              <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                $('#datatable').on('click', '.view-button', function () {
+                  const productId = $(this).data('id');
+                  console.log(productId);
+                  window.location.href = 'product_details.html?id=' + productId;
+              });
+          
+                const logoutBtn = document.getElementById("logoutBtn");
+          
+                logoutBtn.addEventListener("click", function () {
+                  // Clear cookies
+                  const cookies = document.cookie.split("; ");
+                  for (const cookie of cookies) {
+                    const [name, value] = cookie.split("=");
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+                  }
+          
+                  // Redirect to the login page
+                  window.location.href = "login.html"; // Replace with the actual login page URL
+                });
+              });
+          
+               // Reference to the category and items dropdowns
+               const categoryDropdown = document.getElementById('category');
+               const itemsDropdown = document.getElementById('items');
+          
+          
+          
+              // Populate the categories dropdown from Firestore
+              db.collection('PBG Jewellery').doc('categories').get().then(doc => {
+                if (doc.exists) {
+                    const categories = doc.data();
+                    for (const category in categories) {
+                        const option = document.createElement('option');
+                        option.value = category;
+                        option.text = category;
+                        categoryDropdown.appendChild(option);
+                    }
+          
+                    // Trigger the change event to populate the items dropdown initially
+                    categoryDropdown.dispatchEvent(new Event('change'));
+                }
+            });
+          
+            categoryDropdown.addEventListener('change', (event) => {
+              const selectedCategory = event.target.value;
+            
+              // Clear previous items
+              while (itemsDropdown.firstChild) {
+                itemsDropdown.removeChild(itemsDropdown.firstChild);
+              }
+            
+              // Check if the selectedCategory exists in the Firestore data
+              if (selectedCategory) {
+                db.collection('PBG Jewellery').doc('categories').get().then(doc => {
+                  if (doc.exists) {
+                    const categories = doc.data();
+                    const items = categories[selectedCategory];
+                    if (items) {
+                      // Populate the items dropdown
+                      for (const item of items) {
+                        const option = document.createElement('option');
+                        option.value = item;
+                        option.text = item;
+                        itemsDropdown.appendChild(option);
+                      }
+                    }
+                  }
+                });
+            
+                // Log the selected category to the console
+                console.log('Selected Category:', selectedCategory);
+              }
+            });
+          
+            // Event listener for item selection
+            itemsDropdown.addEventListener('change', (event) => {
+                const selectedItem = event.target.value;
+                
+                // Log the selected item to the console
+                console.log('Selected Item:', selectedItem);
+            });
+          
+          
+            </script>
+          
+      </div>
+      <!-- jQuery -->
+
+   
+      <!-- nice scrollbar -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- wow animation -->
+      <script src="js/animate.js"></script>
+      <!-- select country -->
+      <script src="js/bootstrap-select.js"></script>
+      <!-- owl carousel -->
+      <script src="js/owl.carousel.js"></script> 
+      <!-- chart js -->
+      <script src="js/Chart.min.js"></script>
+      <script src="js/Chart.bundle.min.js"></script>
+      <script src="js/utils.js"></script>
+      <script src="js/analyser.js"></script>
+      <!-- nice scrollbar -->
+      <script src="js/perfect-scrollbar.min.js"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="js/custom.js"></script>
+      <script src="js/chart_custom_style1.js"></script>
+  
+   </body>
+</html>

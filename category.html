@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>PBG Jewellery</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      <link rel="icon" href="images/fevicon.png" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- site css -->
+      <link rel="stylesheet" href="style.css" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="css/responsive.css" />
+      <!-- color css -->
+      <link rel="stylesheet" href="css/colors.css" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="css/bootstrap-select.css" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="css/custom.css" />
+      <!-- calendar file css -->
+      <link rel="stylesheet" href="js/semantic.min.css" />
+      <!-- fancy box js -->
+      <link rel="stylesheet" href="css/jquery.fancybox.css" />
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+      <![endif]-->
+      <link rel="stylesheet" href="css/admin.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body class="inner_page tables_page">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section" style="background-color:aliceblue; height:83px;width:80px">
+                        <center>
+
+                      
+                        <a href="index.html"><img class="logo_icon img-responsive" style="height:80px;width:80px" src="images/logo.png" alt="#" /></a>
+                     </center>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_info">
+                           <h6>PBG Jewellery</h6>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="index.html" ><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+            
+                     </li>
+                    
+                     <li><a href="product.html"><i class="fa fa-table purple_color2"></i> <span>Product Management</span></a></li>
+                     <li><a href="category.html"><i class="fa fa-bar-chart-o green_color"></i> <span>Category Management</span></a></li>
+                     <li><a href="pincode.html"><i class="fa fa-map orange_color2"></i> <span>PinCode Management</span></a></li>
+                     <li><a href="images.html"><i class="fa fa-image orange_color2"></i> <span>Image Management</span></a></li>
+                   
+                     
+                   
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+                   <!-- topbar -->
+                   <div class="topbar">
+                     <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="full">
+                           <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        
+                           <div class="right_topbar">
+                              <div class="icon_info">
+                                 <button id="logoutBtn" class="btn btn-success" style="margin: 10px;" >
+                                    <i class="material-icons">exit_to_app</i> Logout
+                                  </button>
+            
+                              </div>
+                           </div>
+                        </div>
+                     </nav>
+                  </div>
+
+               <br>
+
+                  <br>
+             
+               <!-- end topbar -->
+               <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="category" class="form-label">Select a Category:</label>
+                        <select id="category" class="form-select">
+                            <option value="">Select Category</option>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+                    
+                </div>
+                <br>
+                <div class="col-md-6">
+                  <button id="addCollectionButton" class="btn btn-primary">Add Collection</button>
+                  <button id="deleteCollectionButton" class="btn btn-danger">Delete Collection</button>
+                 </div>
+            </div>
+            <div class="container mt-5">
+                <div class="row mt-3">
+                  
+                    <div class="col-md-12">
+                        <h2>Items</h2>
+        
+                        <div class="col-md-6">
+                          <button id="addItemButton" class="btn btn-success">Add Item</button>
+                        </div>
+                        <br>
+                        <table id="itemsTable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Table rows will be populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+            </div>
+            <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+            <script src="config.js"></script>
+            <script>
+                // Reference to the category and items dropdowns
+                const categoryDropdown = document.getElementById('category');
+                const itemsTableBody = document.querySelector('#itemsTable tbody');
+                const addCollectionButton = document.getElementById('addCollectionButton');
+                const deleteCollectionButton = document.getElementById('deleteCollectionButton');
+        
+                // Function to populate the items table
+                function populateItemsTable(selectedCategory) {
+                  // Clear previous table rows
+                  while (itemsTableBody.firstChild) {
+                      itemsTableBody.removeChild(itemsTableBody.firstChild);
+                  }
+          
+                  // Check if the selectedCategory exists in the Firestore data
+                  if (selectedCategory) {
+                      db.collection('PBG Jewellery').doc('categories').get().then(doc => {
+                          if (doc.exists) {
+                              const categories = doc.data();
+                              const items = categories[selectedCategory];
+                              if (items) {
+                                  // Populate the items table
+                                  for (const item of items) {
+                                      const row = document.createElement('tr');
+                                      const itemNameCell = document.createElement('td');
+                                      itemNameCell.textContent = item;
+          
+                                      const actionsCell = document.createElement('td');
+                                      const editButton = document.createElement('button');
+                                      editButton.textContent = 'Edit';
+                                      editButton.style.backgroundColor = '#337ab7'; // Set background color
+                                      editButton.style.color = 'white'; // Set text color
+                                      editButton.style.border = 'none'; // Remove border
+                                      editButton.style.padding = '5px 10px'; // Add padding
+                                      editButton.style.marginRight = '5px'; // Add margin
+                                      editButton.addEventListener('click', () => {
+                                          // Implement edit functionality here
+                                          const updatedItemName = prompt('Edit Item:', item);
+                                          if (updatedItemName !== null && updatedItemName.trim() !== '') {
+                                              // Find the index of the item and update it in the items array
+                                              const index = items.indexOf(item);
+                                              if (index !== -1) {
+                                                  items[index] = updatedItemName;
+                                                  // Update Firestore with the updated items array
+                                                  db.collection('PBG Jewellery').doc('categories').update({
+                                                      [selectedCategory]: items
+                                                  }).then(() => {
+                                                      // Refresh the items table for the selected category
+                                                      populateItemsTable(selectedCategory);
+                                                  }).catch(error => {
+                                                      console.error('Error updating item:', error);
+                                                  });
+                                              }
+                                          }
+                                      });
+          
+                                      const deleteButton = document.createElement('button');
+                                      deleteButton.textContent = 'Delete';
+                                      deleteButton.style.backgroundColor = 'red'; // Set background color
+                                      deleteButton.style.color = 'white'; // Set text color
+                                      deleteButton.style.border = 'none'; // Remove border
+                                      deleteButton.style.padding = '5px 10px'; // Add padding
+                                      deleteButton.style.marginLeft = '5px'; // Add margin
+                                      deleteButton.addEventListener('click', () => {
+                                          // Implement delete functionality here
+                                          const confirmDelete = confirm(`Are you sure you want to delete '${item}'?`);
+                                          if (confirmDelete) {
+                                              // Find the index of the item and remove it from the items array
+                                              const index = items.indexOf(item);
+                                              if (index !== -1) {
+                                                  items.splice(index, 1);
+                                                  // Update Firestore with the updated items array
+                                                  db.collection('PBG Jewellery').doc('categories').update({
+                                                      [selectedCategory]: items
+                                                  }).then(() => {
+                                                      // Refresh the items table for the selected category
+                                                      populateItemsTable(selectedCategory);
+                                                  }).catch(error => {
+                                                      console.error('Error deleting item:', error);
+                                                  });
+                                              }
+                                          }
+                                      });
+          
+                                      actionsCell.appendChild(editButton);
+                                      actionsCell.appendChild(deleteButton);
+          
+                                      row.appendChild(itemNameCell);
+                                      row.appendChild(actionsCell);
+          
+                                      itemsTableBody.appendChild(row);
+                                  }
+                              }
+                          }
+                      });
+                  }
+              }
+          
+                // Function to add a new collection
+                // ...
+        
+        // Function to add a new collection
+        function addCollection() {
+          const newCollectionName = prompt('Enter the name of the new collection:');
+          
+          if (newCollectionName !== null) {
+              // Prompt the user to add items to the new collection
+              const addItemsOption = confirm('Do you want to add items to this collection now?');
+              
+              if (addItemsOption) {
+                  const items = [];
+                  
+                  while (true) {
+                      const newItemName = prompt('Enter the name of an item for the collection (or leave empty to finish adding items):');
+                      
+                      if (newItemName === null || newItemName.trim() === '') {
+                          break; // Exit the loop if the user cancels or leaves the item name empty
+                      }
+                      
+                      items.push(newItemName);
+                  }
+                  
+                  // Add the new collection and items to Firestore
+                  const collectionData = {
+                      [newCollectionName]: items
+                  };
+                  
+                  db.collection('PBG Jewellery').doc('categories').update(collectionData).then(() => {
+                      // Refresh the category dropdown
+                      categoryDropdown.innerHTML = '';
+                      populateCategoryDropdown();
+                  }).catch(error => {
+                      console.error('Error adding collection and items:', error);
+                  });
+              } else {
+                  // Only add the new collection to Firestore (without items)
+                  db.collection('PBG Jewellery').doc('categories').update({
+                      [newCollectionName]: []
+                  }).then(() => {
+                      // Refresh the category dropdown
+                      categoryDropdown.innerHTML = '';
+                      populateCategoryDropdown();
+                  }).catch(error => {
+                      console.error('Error adding collection:', error);
+                  });
+              }
+          }
+        }
+        
+        function deleteCollection() {
+          const selectedCategory = categoryDropdown.value;
+        
+          if (selectedCategory) {
+              const confirmDelete = confirm(`Are you sure you want to delete the collection '${selectedCategory}'? This action cannot be undone.`);
+        
+              if (confirmDelete) {
+                  // Delete the collection from Firestore
+                  db.collection('PBG Jewellery').doc('categories').update({
+                      [selectedCategory]: firebase.firestore.FieldValue.delete()
+                  }).then(() => {
+                      // Refresh the category dropdown and clear the items table
+                      categoryDropdown.innerHTML = '';
+                      populateCategoryDropdown();
+                      clearItemsTable();
+                  }).catch(error => {
+                      console.error('Error deleting collection:', error);
+                  });
+              }
+          }
+        }
+        
+        
+        function addItemToCategory() {
+          const selectedCategory = categoryDropdown.value;
+        
+          if (selectedCategory) {
+              const newItemName = prompt('Enter the name of the new item for the category:');
+              
+              if (newItemName !== null && newItemName.trim() !== '') {
+                  // Get the current items for the selected category
+                  db.collection('PBG Jewellery').doc('categories').get().then(doc => {
+                      if (doc.exists) {
+                          const categories = doc.data();
+                          const currentItems = categories[selectedCategory] || [];
+        
+                          // Add the new item to the current items
+                          currentItems.push(newItemName);
+        
+                          // Update the Firestore document with the new items
+                          db.collection('PBG Jewellery').doc('categories').update({
+                              [selectedCategory]: currentItems
+                          }).then(() => {
+                              // Refresh the items table for the selected category
+                              populateItemsTable(selectedCategory);
+                          }).catch(error => {
+                              console.error('Error adding item:', error);
+                          });
+                      }
+                  });
+              }
+          }
+        }
+        
+        // Event listener for adding an item to the selected category
+        addItemButton.addEventListener('click', addItemToCategory);
+        
+        function clearItemsTable() {
+          while (itemsTableBody.firstChild) {
+              itemsTableBody.removeChild(itemsTableBody.firstChild);
+          }
+        }
+        
+        deleteCollectionButton.addEventListener('click', deleteCollection);
+        
+        
+        
+                // Function to populate the categories dropdown from Firestore
+                function populateCategoryDropdown() {
+                    db.collection('PBG Jewellery').doc('categories').get().then(doc => {
+                        if (doc.exists) {
+                            const categories = doc.data();
+                            for (const category in categories) {
+                                const option = document.createElement('option');
+                                option.value = category;
+                                option.text = category;
+                                categoryDropdown.appendChild(option);
+                            }
+                        }
+                    });
+                }
+        
+                // Event listener for category selection
+                categoryDropdown.addEventListener('change', (event) => {
+                    const selectedCategory = event.target.value;
+                    // Populate the items table when a category is selected
+                    populateItemsTable(selectedCategory);
+                });
+        
+                // Event listener for adding a new collection
+                addCollectionButton.addEventListener('click', addCollection);
+        
+                // Initialize the category dropdown and items table
+                populateCategoryDropdown();
+                categoryDropdown.dispatchEvent(new Event('change'));
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    $('#datatable').on('click', '.view-button', function () {
+                      const productId = $(this).data('id');
+                      console.log(productId);
+                      window.location.href = 'product_details.html?id=' + productId;
+                  });
+              
+                    const logoutBtn = document.getElementById("logoutBtn");
+              
+                    logoutBtn.addEventListener("click", function () {
+                      // Clear cookies
+                      const cookies = document.cookie.split("; ");
+                      for (const cookie of cookies) {
+                        const [name, value] = cookie.split("=");
+                    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+                      }
+              
+                      // Redirect to the login page
+                      window.location.href = "login.html"; // Replace with the actual login page URL
+                    });
+                  });
+            </script>
+         
+      </div>
+      <!-- jQuery -->
+
+   
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- wow animation -->
+      <script src="js/animate.js"></script>
+      <!-- select country -->
+      <script src="js/bootstrap-select.js"></script>
+      <!-- owl carousel -->
+      <script src="js/owl.carousel.js"></script> 
+      <!-- chart js -->
+      <script src="js/Chart.min.js"></script>
+      <script src="js/Chart.bundle.min.js"></script>
+      <script src="js/utils.js"></script>
+      <script src="js/analyser.js"></script>
+      <!-- nice scrollbar -->
+      <script src="js/perfect-scrollbar.min.js"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="js/custom.js"></script>
+      <script src="js/chart_custom_style1.js"></script>
+   </body>
+</html>

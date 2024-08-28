@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>PBG Jewellery</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      <link rel="icon" href="images/fevicon.png" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- site css -->
+      <link rel="stylesheet" href="style.css" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="css/responsive.css" />
+      <!-- color css -->
+      <link rel="stylesheet" href="css/colors.css" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="css/bootstrap-select.css" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="css/custom.css" />
+      <!-- calendar file css -->
+      <link rel="stylesheet" href="js/semantic.min.css" />
+      <!-- fancy box js -->
+      <link rel="stylesheet" href="css/jquery.fancybox.css" />
+      <style>
+        .fixed-image-container {
+            width: 200px; /* Set your desired width */
+            height: 100%; /* Set your desired height */
+            overflow: hidden; /* Hide overflow if the image size exceeds the container */
+        }
+        
+     
+        
+        .fixed-image-container img {
+            max-width: 100%; /* Ensure the image fits within the container width */
+            max-height: 100%; /* Ensure the image fits within the container height */
+            object-fit: cover; /* Set the object-fit property to cover to maintain aspect ratio and fill the container */
+        }
+        
+        
+      </style>
+      <link rel="stylesheet" href="css/admin.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body class="inner_page tables_page">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section" style="background-color:aliceblue; height:83px;width:80px">
+                        <center>
+                        <a href="index.html"><img class="logo_icon img-responsive" style="height:80px;width:80px" src="images/logo.png" alt="#" /></a>
+                     </center>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_info">
+                           <h6>PBG Jewellery</h6>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="index.html" ><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+            
+                     </li>
+                    
+                     <li><a href="product.html"><i class="fa fa-table purple_color2"></i> <span>Product Management</span></a></li>
+                     <li><a href="category.html"><i class="fa fa-bar-chart-o green_color"></i> <span>Category Management</span></a></li>
+                     <li><a href="pincode.html"><i class="fa fa-map orange_color2"></i> <span>PinCode Management</span></a></li>
+                     <li><a href="images.html"><i class="fa fa-image orange_color2"></i> <span>Image Management</span></a></li>
+                     
+                   
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+                   <!-- topbar -->
+                   <div class="topbar">
+                     <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="full">
+                           <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        
+                           <div class="right_topbar">
+                              <div class="icon_info">
+                                 <button id="logoutBtn" class="btn btn-success" style="margin: 10px;" >
+                                    <i class="material-icons">exit_to_app</i> Logout
+                                  </button>
+            
+                              </div>
+                           </div>
+                        </div>
+                     </nav>
+                  </div>
+
+               <br><br>
+               <div class="container mt-5">
+             
+               <h1>Upload Images</h1>
+               <form id="imageForm" enctype="multipart/form-data">
+                   <label for="id">ID:</label>
+                   <input type="text" id="id" name="id" required><br>
+           
+                   <label for="images">Upload Images (1-5):</label>
+                   <input type="file" id="images" name="images[]" accept="image/*" multiple required><br>
+           
+                   <input type="submit" value="Upload">
+               </form>
+               </div>
+           
+
+               <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="searchId" class="form-label">Search by ID:</label>
+                        <input type="text" id="searchId" class="form-control" required>
+                        <button id="searchButton" class="btn btn-primary mt-3">Search</button>
+                    </div>
+                </div>
+               </div>
+            
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Images for ID:</h2>
+                       <!-- Add this div inside your imageContainer to hold the fixed-size images -->
+                       <div id="fixedImageContainer"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+        <script src="config.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/animate.js"></script>
+      <script src="js/bootstrap-select.js"></script>
+      <script src="js/owl.carousel.js"></script> 
+      <script src="js/Chart.min.js"></script>
+      <script src="js/Chart.bundle.min.js"></script>
+      <script src="js/utils.js"></script>
+      <script src="js/analyser.js"></script>
+      <script src="js/perfect-scrollbar.min.js"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <script src="js/custom.js"></script>
+      <script src="js/chart_custom_style1.js"></script>
+      <script>        
+        const storage = firebase.storage();
+        const storageRef = storage.ref();
+        
+        // Get HTML elements
+        const searchButton = document.getElementById('searchButton');
+        const searchIdInput = document.getElementById('searchId');
+        const imageContainer = document.getElementById('imageContainer');
+ 
+        function displayImagesForId(id) {        
+            fixedImageContainer.innerHTML = '';
+        
+            // Create a reference to the storage folder for the given ID
+            const idFolderRef = storageRef.child(id);
+        
+            // List items (images) in the folder
+            idFolderRef.listAll().then(function (result) {
+                if (result.items.length === 0) {
+                    // No images found for the specified ID
+                    fixedImageContainer.innerHTML = 'No images found for this ID.';
+                } else {
+                    result.items.forEach(function (itemRef, index) {
+                        // Get the image URL from Firebase Storage
+                        itemRef.getDownloadURL().then(function (url) {
+                            // Create a fixed-size image container
+                            const imageDiv = document.createElement('div');
+                            imageDiv.classList.add('fixed-image-container', 'col-md-4'); // Use Bootstrap's grid system to create 3 columns
+                    
+                            // Create an image element
+                            const img = document.createElement('img');
+                            img.src = url; // Set the image URL
+                            img.alt = 'Image';
+                    
+                            // Create a delete button
+                            const deleteButton = document.createElement('button');
+                            deleteButton.textContent = 'Delete';
+                            deleteButton.classList.add('btn', 'btn-danger', 'mt-2', 'delete-button');
+                    
+                            // Append the image and delete button to the container
+                            imageDiv.appendChild(img);
+                            imageDiv.appendChild(deleteButton);
+                    
+                            // Add a click event listener to the delete button
+                            deleteButton.addEventListener('click', function () {
+                                // Delete the image from Firebase Storage
+                                itemRef.delete().then(function () {
+                                    // Refresh the images after deletion
+                                    displayImagesForId(id);
+                                }).catch(function (error) {
+                                    console.error('Error deleting image:', error);
+                                });
+                            });
+                    
+                            // Append the image container to the fixedImageContainer
+                            fixedImageContainer.appendChild(imageDiv);
+                        }).catch(function (error) {
+                            console.error('Error getting image URL:', error);
+                        });
+                    });
+                }
+            }).catch(function (error) {
+                console.error('Error listing images:', error);
+            });
+        } 
+        // Event listener for the search button
+        searchButton.addEventListener('click', function () {
+            const id = searchIdInput.value.trim();
+        
+            if (id) {
+                displayImagesForId(id);
+            } else {
+                alert('Please enter an ID to search for images.');
+            }
+        });
+ 
+ 
+        // Function to check the number of images in the folder
+        function checkNumberOfImages(id) {
+            const idFolderRef = storageRef.child(id);
+            return idFolderRef.listAll().then(function (result) {
+                return result.items.length;
+            });
+        }
+        
+        // Event listener for form submission
+        document.getElementById("imageForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+        
+            const id = document.getElementById("id").value;
+            const images = document.getElementById("images").files;
+        
+            // Check the number of images already in the folder
+            checkNumberOfImages(id).then(currentImagesCount => {
+                if (currentImagesCount >= 5) {
+                    alert("You have already uploaded the maximum number of images for this ID.");
+                    return;
+                }
+        
+                const remainingImages = 5 - currentImagesCount;
+        
+                if (images.length < 1 || images.length > remainingImages) {
+                    alert(`You can upload up to ${remainingImages} more images.`);
+                    return;
+                }
+        
+                // Create a reference to the storage bucket with the ID as the folder name
+                const storageRef = firebase.storage().ref(id);
+        
+                // Upload each selected image to the storage bucket
+                Array.from(images).forEach((image, index) => {
+                    const imageRef = storageRef.child(`image_${index + 1}`);
+                    imageRef.put(image).then((snapshot) => {
+                        console.log(`Image ${index + 1} uploaded.`);
+                    }).catch((error) => {
+                        console.error(`Error uploading image ${index + 1}: ${error}`);
+                    });
+                });
+        
+                // Reset the form
+                document.getElementById("imageForm").reset();
+                alert("Uploaded Sucessfully.");
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            $('#datatable').on('click', '.view-button', function () {
+            const productId = $(this).data('id');
+            console.log(productId);
+            window.location.href = 'product_details.html?id=' + productId;
+        });
+        });
+    </script>
+    <script>
+        const logoutBtn = document.getElementById("logoutBtn");
+            logoutBtn.addEventListener("click", function () {    
+            // Redirect to the login page
+            window.location.href = "login.html"; // Replace with the actual login page URL
+            });
+    </script>
+</body>
+</html>
